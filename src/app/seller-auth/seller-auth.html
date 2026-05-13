@@ -28,7 +28,7 @@
 <div class="login" *ngIf="showLogin" style="margin-top: 10%;">
   <h1>Login Form For seller</h1>
 
-  <form [formGroup]="sellerForm" (ngSubmit)="login()" class="common-form">
+  <form [formGroup]="sellerForm" (ngSubmit)="logIn()" class="common-form">
 
     <label>Enter Email</label>
     <input type="text" class="form-input" placeholder="Enter your email" formControlName="email">

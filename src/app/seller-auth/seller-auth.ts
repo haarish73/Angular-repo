@@ -45,9 +45,10 @@ openSignUp() {
   this.showLogin = false;
 }
 logIn() {
-    console.log(this.sellerForm.value);
 
-    this.seller.userLogIn(this.sellerForm.value as logIn)
+  console.log(this.sellerForm.value);
 
-  }
+  this.seller.userLogIn(this.sellerForm.value as logIn);
+
+}
 }

@@ -30,27 +30,40 @@ reloadSeller() {
 }
 userLogIn(data: logIn) {
 
+  console.log("userLogIn called");
+
   this.http.get(
     `http://localhost:3000/seller?email=${data.email}&password=${data.password}`,
     { observe: 'response' }
-  ).subscribe((result: any) => {
+  ).subscribe({
 
-    console.log(result.body);
+    next: (result: any) => {
 
-    if (result && result.body && result.body.length) {
+      console.log("API RESULT:", result);
 
-      console.log("login success");
+      if (result.body.length) {
 
-      localStorage.setItem('user', JSON.stringify(result.body));
+        console.warn("LOGIN SUCCESS");
 
-      this.router.navigate(['seller-home']);
+        localStorage.setItem('user', JSON.stringify(result.body));
 
-    } else {
+        this.router.navigate(['seller-home']);
 
-      console.log("invalid credentials");
+      } else {
+
+        console.warn("INVALID USER");
+
+      }
+
+    },
+
+    error: (err) => {
+
+      console.error("API ERROR:", err);
 
     }
 
   });
+
 }
 }
