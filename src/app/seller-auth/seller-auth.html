@@ -1,0 +1,22 @@
+<h1>SignUp Form For Seller</h1>
+
+<form [formGroup]="sellerForm" (ngSubmit)="signUp()" class="common-form">
+
+  <label>Enter Name</label>
+  <input class="form-input" type="text" placeholder="Enter Name" formControlName="name">
+
+  <!-- <br><br> -->
+
+  <label>Enter Password</label>
+  <input type="password" class="form-input" placeholder="Enter Password" formControlName="password">
+
+  <!-- <br><br> -->
+
+  <label>Enter Email</label>
+  <input type="text" class="form-input" placeholder="Enter your email" formControlName="email">
+
+  <!-- <br><br> -->
+
+  <button class="form-button">Submit</button>
+
+</form>
