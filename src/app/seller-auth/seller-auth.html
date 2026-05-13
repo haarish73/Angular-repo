@@ -1,22 +1,46 @@
-<h1>SignUp Form For Seller</h1>
+<div class="signUp" *ngIf="!showLogin">
+  <h1>SignUp Form For Seller</h1>
 
-<form [formGroup]="sellerForm" (ngSubmit)="signUp()" class="common-form">
+  <form [formGroup]="sellerForm" (ngSubmit)="signUp()" class="common-form">
 
-  <label>Enter Name</label>
-  <input class="form-input" type="text" placeholder="Enter Name" formControlName="name">
+    <label>Enter Name</label>
+    <input class="form-input" type="text" placeholder="Enter Name" formControlName="name">
 
-  <!-- <br><br> -->
+    <label>Enter Password</label>
+    <input type="password" class="form-input" placeholder="Enter Password" formControlName="password">
 
-  <label>Enter Password</label>
-  <input type="password" class="form-input" placeholder="Enter Password" formControlName="password">
+    <label>Enter Email</label>
+    <input type="text" class="form-input" placeholder="Enter your email" formControlName="email">
 
-  <!-- <br><br> -->
+    <button class="form-button">Submit</button>
 
-  <label>Enter Email</label>
-  <input type="text" class="form-input" placeholder="Enter your email" formControlName="email">
+    <br>
 
-  <!-- <br><br> -->
+    <a (click)="openLogin()">Already have account? Click to login</a>
 
-  <button class="form-button">Submit</button>
+  </form>
+</div>
 
-</form>
+<br>
+
+<br>
+
+<div class="login" *ngIf="showLogin" style="margin-top: 10%;">
+  <h1>Login Form For seller</h1>
+
+  <form [formGroup]="sellerForm" (ngSubmit)="login()" class="common-form">
+
+    <label>Enter Email</label>
+    <input type="text" class="form-input" placeholder="Enter your email" formControlName="email">
+
+    <label>Enter Password</label>
+    <input type="password" class="form-input" placeholder="Enter Password" formControlName="password">
+
+    <button class="form-button">Submit</button>
+
+    <br>
+
+    <a (click)="openSignUp()">Don't have account? Sign up</a>
+
+  </form>
+</div>

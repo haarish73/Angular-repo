@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
 import { HttpClientModule } from '@angular/common/http';
+import { Seller } from './services/seller';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
   templateUrl: './app.html',
 })
 export class App {
-
+  // title:'ecom-project',
+  constructor(private seller : Seller){}
+  ngOnInit():void{
+    this.seller.reloadSeller()
+  }
 }
