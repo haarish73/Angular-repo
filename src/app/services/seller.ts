@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { signUp } from '../data-type';
+import { logIn, signUp } from '../data-type';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router'
 
@@ -27,5 +27,30 @@ reloadSeller() {
   if (localStorage.getItem('user')) {
     this.isSelllerLoggedIn.next(true);
   }
+}
+userLogIn(data: logIn) {
+
+  this.http.get(
+    `http://localhost:3000/seller?email=${data.email}&password=${data.password}`,
+    { observe: 'response' }
+  ).subscribe((result: any) => {
+
+    console.log(result.body);
+
+    if (result && result.body && result.body.length) {
+
+      console.log("login success");
+
+      localStorage.setItem('user', JSON.stringify(result.body));
+
+      this.router.navigate(['seller-home']);
+
+    } else {
+
+      console.log("invalid credentials");
+
+    }
+
+  });
 }
 }

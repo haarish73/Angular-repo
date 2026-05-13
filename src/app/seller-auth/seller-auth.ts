@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { Seller } from '../services/seller';
 import { Router } from '@angular/router';
-import { signUp } from '../data-type';
+import { logIn, signUp } from '../data-type';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -44,5 +44,10 @@ login() {
 openSignUp() {
   this.showLogin = false;
 }
+logIn() {
+    console.log(this.sellerForm.value);
 
+    this.seller.userLogIn(this.sellerForm.value as logIn)
+
+  }
 }
