@@ -65,6 +65,12 @@
       "password": "Harish@123",
       "email": "Haarish@gmail.com",
       "id": 11
+    },
+    {
+      "name": "sam",
+      "password": "sam@123",
+      "email": "sam@gmail.com",
+      "id": 12
     }
   ]
 }

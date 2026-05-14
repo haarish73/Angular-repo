@@ -12,34 +12,45 @@ import { CommonModule } from '@angular/common';
 export class Header {
 
   menuType: string = 'default';
+  sellerName: string = ''
 
-  constructor(private route: Router) {}
+  constructor(private route: Router) { }
 
-ngOnInit() {
+  ngOnInit() {
 
-  this.updateMenu(this.route.url);
+    this.updateMenu(this.route.url);
 
-  this.route.events.subscribe((event: any) => {
+    this.route.events.subscribe((event: any) => {
 
-    if (event.url) {
-      this.updateMenu(event.url);
-    }
+      if (event.url) {
+        this.updateMenu(event.url);
+      }
 
-  });
+    });
 
-}
-
-updateMenu(url: string) {
-
-  const seller = localStorage.getItem('seller');
-
-  if (seller && url.includes('seller')) {
-    this.menuType = 'seller';
-  } else {
-    this.menuType = 'default';
   }
 
-}
+  updateMenu(url: string) {
 
+    const seller = localStorage.getItem('seller');
+
+    if (seller && url.includes('seller')) {
+      this.menuType = 'seller';
+      const sellerStore = localStorage.getItem('seller');
+
+      if (sellerStore) {
+        const sellerData = JSON.parse(sellerStore);
+        this.sellerName = sellerData?.name || sellerData?.email;
+      }
+    } else {
+      this.menuType = 'default';
+    }
+
+  }
+
+  logOut() {
+    localStorage.removeItem('seller');
+    this.route.navigate(['/']);
+  }
 
 }
