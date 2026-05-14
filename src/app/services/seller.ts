@@ -45,7 +45,8 @@ userLogIn(data: logIn) {
 
         console.warn("LOGIN SUCCESS");
 
-        localStorage.setItem('user', JSON.stringify(result.body));
+        // localStorage.setItem('user', JSON.stringify(result.body));
+         localStorage.setItem('seller', 'true');
 
         this.router.navigate(['seller-home']);
 
