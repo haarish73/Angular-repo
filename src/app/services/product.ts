@@ -28,4 +28,10 @@ export class ProductService {
     return this.http.put(`http://localhost:3000/products/${id}`, data);
   }
 
+getProducts(limit: number){
+  return this.http.get<Products[]>(
+    `http://localhost:3000/products?_limit=${limit}`
+  );
+}
+
 }

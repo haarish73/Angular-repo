@@ -82,6 +82,7 @@ export class SellerHome implements OnInit {
 
       this.editId = null;
       this.backupProduct = null;
+      this.list();
     });
   }
 }
