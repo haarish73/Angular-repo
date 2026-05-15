@@ -72,5 +72,16 @@
       "email": "sam@gmail.com",
       "id": 12
     }
+  ],
+  "products": [
+    {
+      "ProductName": "Samsung Galaxy S24",
+      "ProductPrice": 74999,
+      "ProductColor": "Phantom Black case",
+      "ProductCategory": "Mobile",
+      "ProductDescriptions": "Flagship Samsung phone with powerful Snapdragon processor",
+      "ProductUrl": "https://th.bing.com/th/id/OIP.Fs8siuBgg9O2i1FQEqk_DAHaHa?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "id": 3
+    }
   ]
 }

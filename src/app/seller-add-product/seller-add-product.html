@@ -1,1 +1,52 @@
-<p>seller-add-product works!</p>
+<h1>Add Products Lists</h1>
+
+<div class="form-control">
+  <p>{{addProductmessage}}</p>
+  <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)">
+
+    <input 
+      type="text" 
+      placeholder="Enter Product Name" 
+      name="name"
+      ngModel
+    >
+
+    <input 
+      type="text" 
+      placeholder="Enter Product Price" 
+      name="price"
+      ngModel
+    >
+
+    <input 
+      type="text" 
+      placeholder="Enter Product Color" 
+      name="color"
+      ngModel
+    >
+
+    <input 
+      type="text" 
+      placeholder="Enter Product category" 
+      name="category"
+      ngModel
+    >
+
+    <input 
+      type="text" 
+      placeholder="Enter Product description" 
+      name="description"
+      ngModel
+    >
+
+    <input 
+      type="text" 
+      placeholder="Enter Product Image URL" 
+      name="image"
+      ngModel
+    >
+
+    <button>Submit</button>
+
+  </form>
+</div>

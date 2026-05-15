@@ -10,6 +10,8 @@ import { Router } from '@angular/router'
 export class Seller {
   isSelllerLoggedIn = new BehaviorSubject<boolean>(false);
   constructor(private http: HttpClient, private router: Router) { }
+
+  
   userSignUp(data: signUp) {
     this.http.post('http://localhost:3000/seller', data, { observe: 'response' })
       .subscribe((result) => {
@@ -28,6 +30,8 @@ export class Seller {
       this.isSelllerLoggedIn.next(true);
     }
   }
+
+
   userLogIn(data: logIn) {
 
     console.log("userLogIn called");

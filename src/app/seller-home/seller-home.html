@@ -1,1 +1,59 @@
-<p>seller-home works!</p>
+<div class="product-List">
+  <h1>All Product List</h1>
+
+  <table border="1" cellspacing="0" cellpadding="10">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Color</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Action</th>
+        <th>Updates</th>
+        <th>Save</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of productList">
+      <td>
+  <span *ngIf="editId !== item.id">{{ item.ProductName }}</span>
+  <input *ngIf="editId === item.id" [(ngModel)]="item.ProductName">
+</td>
+
+<td>
+  <span *ngIf="editId !== item.id">{{ item.ProductPrice }}</span>
+  <input *ngIf="editId === item.id" type="number" [(ngModel)]="item.ProductPrice">
+</td>
+
+<td>
+  <span *ngIf="editId !== item.id">{{ item.ProductColor }}</span>
+  <input *ngIf="editId === item.id" [(ngModel)]="item.ProductColor">
+</td>
+
+<td>
+  <span *ngIf="editId !== item.id">{{ item.ProductCategory }}</span>
+  <input *ngIf="editId === item.id" [(ngModel)]="item.ProductCategory">
+</td>
+
+<td>
+  <span *ngIf="editId !== item.id">{{ item.ProductDescriptions }}</span>
+  <input *ngIf="editId === item.id" [(ngModel)]="item.ProductDescriptions">
+</td>
+        <td>
+          <img
+            [src]="item.ProductUrl"
+            alt="product image"
+            width="80"
+            height="80"
+          />
+        </td>
+    
+          <td><button (click) ="deleteProduct(item.id)">Delete</button></td>
+          <td><button (click) = "editProduct(item)">Edit</button></td>
+          <td><button (click) = "saveProduct(item)">Save</button></td>
+      </tr>
+  </table>
+</div>
