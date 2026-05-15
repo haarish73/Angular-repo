@@ -1,4 +1,27 @@
-# EcommerceWebApp
+# EcommerceWebApp 
+
+## Contributions
+
+Contributions are welcome!
+
+If you would like to contribute to this project, you can work on the existing issues that have already been created.
+
+### Steps to Contribute
+
+1. Fork the repository
+2. Choose an existing issue
+3. Create a new branch
+4. Make your changes
+5. Commit and push your updates
+6. Submit a Pull Request
+
+Happy coding!
+
+
+
+
+
+
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
 
