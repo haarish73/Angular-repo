@@ -1,7 +1,15 @@
-.common-form{
+.signUp{
+    display: flex;
+    margin-top: 5%;
+    width: 50%;
+    border: 5px solid blueviolet;
+    height: 22%;
+}
+
+
+.signUp h1{
     align-items: center;
     justify-content: center;
-    /* display: flex; */
-    margin-left: 30%;
-
+    display: flex;
 }
+

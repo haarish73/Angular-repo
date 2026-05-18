@@ -1,134 +1,134 @@
-<div class="product-List">
-  <h1>All Product List</h1>
+          <div class="product-List">
+            <h1>All Product List</h1>
 
-  <table border="1" cellspacing="0" cellpadding="10">
-    
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Color</th>
-        <th>Category</th>
-        <th>Description</th>
-        <th>Image</th>
-        <th>Delete</th>
-        <th>Edit</th>
-        <th>Save</th>
-      </tr>
-    </thead>
+            <table border="1" cellspacing="0" cellpadding="10">
+              
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Color</th>
+                  <th>Category</th>
+                  <th>Description</th>
+                  <th>Image</th>
+                  <th>Delete</th>
+                  <th>Edit</th>
+                  <th>Save</th>
+                </tr>
+              </thead>
 
-    <tbody>
+              <tbody>
 
-      <tr *ngFor="let item of productList">
+                <tr *ngFor="let item of productList">
 
-        <!-- NAME -->
-        <td>
-          <span *ngIf="editId !== item.id">
-            {{ item.ProductName }}
-          </span>
+                  <!-- NAME -->
+                  <td>
+                    <span *ngIf="editId !== item.id">
+                      {{ item.ProductName }}
+                    </span>
 
-          <input
-            *ngIf="editId === item.id"
-            [(ngModel)]="item.ProductName"
-          >
-        </td>
+                    <input
+                      *ngIf="editId === item.id"
+                      [(ngModel)]="item.ProductName"
+                    >
+                  </td>
 
-        <!-- PRICE -->
-        <td>
-          <span *ngIf="editId !== item.id">
-            {{ item.ProductPrice }}
-          </span>
+                  <!-- PRICE -->
+                  <td>
+                    <span *ngIf="editId !== item.id">
+                      {{ item.ProductPrice }}
+                    </span>
 
-          <input
-            *ngIf="editId === item.id"
-            type="number"
-            [(ngModel)]="item.ProductPrice"
-          >
-        </td>
+                    <input
+                      *ngIf="editId === item.id"
+                      type="number"
+                      [(ngModel)]="item.ProductPrice"
+                    >
+                  </td>
 
-        <!-- COLOR -->
-        <td>
-          <span *ngIf="editId !== item.id">
-            {{ item.ProductColor }}
-          </span>
+                  <!-- COLOR -->
+                  <td>
+                    <span *ngIf="editId !== item.id">
+                      {{ item.ProductColor }}
+                    </span>
 
-          <input
-            *ngIf="editId === item.id"
-            [(ngModel)]="item.ProductColor"
-          >
-        </td>
+                    <input
+                      *ngIf="editId === item.id"
+                      [(ngModel)]="item.ProductColor"
+                    >
+                  </td>
 
-        <!-- CATEGORY -->
-        <td>
-          <span *ngIf="editId !== item.id">
-            {{ item.ProductCategory }}
-          </span>
+                  <!-- CATEGORY -->
+                  <td>
+                    <span *ngIf="editId !== item.id">
+                      {{ item.ProductCategory }}
+                    </span>
 
-          <input
-            *ngIf="editId === item.id"
-            [(ngModel)]="item.ProductCategory"
-          >
-        </td>
+                    <input
+                      *ngIf="editId === item.id"
+                      [(ngModel)]="item.ProductCategory"
+                    >
+                  </td>
 
-        <!-- DESCRIPTION -->
-        <td>
-          <span *ngIf="editId !== item.id">
-            {{ item.ProductDescriptions }}
-          </span>
+                  <!-- DESCRIPTION -->
+                  <td>
+                    <span *ngIf="editId !== item.id">
+                      {{ item.ProductDescriptions }}
+                    </span>
 
-          <input
-            *ngIf="editId === item.id"
-            [(ngModel)]="item.ProductDescriptions"
-          >
-        </td>
+                    <input
+                      *ngIf="editId === item.id"
+                      [(ngModel)]="item.ProductDescriptions"
+                    >
+                  </td>
 
-        <!-- IMAGE -->
-        <td>
-          <span *ngIf="editId !== item.id">
-            <img
-              [src]="item.ProductUrl"
-              width="80"
-              height="80"
-              alt="product"
-            >
-          </span>
+                  <!-- IMAGE -->
+                  <td>
+                    <span *ngIf="editId !== item.id">
+                      <img
+                        [src]="item.ProductUrl"
+                        width="80"
+                        height="80"
+                        alt="product"
+                      >
+                    </span>
 
-          <input
-            *ngIf="editId === item.id"
-            [(ngModel)]="item.ProductUrl"
-          >
-        </td>
+                    <input
+                      *ngIf="editId === item.id"
+                      [(ngModel)]="item.ProductUrl"
+                    >
+                  </td>
 
-        <!-- DELETE -->
-        <td>
-          <button (click)="deleteProduct(item.id)">
-            Delete
-          </button>
-        </td>
+                  <!-- DELETE -->
+                  <td>
+                    <button (click)="deleteProduct(item.id)">
+                      Delete
+                    </button>
+                  </td>
 
-        <!-- EDIT -->
-        <td>
-          <button
-            *ngIf="editId !== item.id"
-            (click)="editProduct(item)"
-          >
-            Edit
-          </button>
-        </td>
+                  <!-- EDIT -->
+                  <td>
+                    <button
+                      *ngIf="editId !== item.id"
+                      (click)="editProduct(item)"
+                    >
+                      Edit
+                    </button>
+                  </td>
 
-        <!-- SAVE -->
-        <td>
-          <button
-            *ngIf="editId === item.id"
-            (click)="saveProduct(item)"
-          >
-            Save
-          </button>
-        </td>
+                  <!-- SAVE -->
+                  <td>
+                    <button
+                      *ngIf="editId === item.id"
+                      (click)="saveProduct(item)"
+                    >
+                      Save
+                    </button>
+                  </td>
 
-      </tr>
+                </tr>
 
-    </tbody>
+              </tbody>
 
-  </table>
-</div>
+            </table>
+          </div>

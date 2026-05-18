@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.css',
   standalone: true
@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class Header {
 
   menuType: string = 'default';
-  sellerName: string = ''
+  sellerName: string = '';
 
   constructor(private route: Router) { }
 
@@ -36,12 +36,14 @@ export class Header {
 
     if (seller && url.includes('seller')) {
       this.menuType = 'seller';
+
       const sellerStore = localStorage.getItem('seller');
 
       if (sellerStore) {
         const sellerData = JSON.parse(sellerStore);
         this.sellerName = sellerData?.name || sellerData?.email;
       }
+
     } else {
       this.menuType = 'default';
     }

@@ -23,7 +23,7 @@ export const routes: Routes = [
     path:'seller-add-product',
     component:SellerAddProduct,
     
-    // canActivate : [authGuard]
+    canActivate : [authGuard]
   }
 
 ];

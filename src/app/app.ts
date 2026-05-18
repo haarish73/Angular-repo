@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Header, HttpClientModule, HomeComponent],
+  imports: [RouterOutlet, Header, HttpClientModule],
   templateUrl: './app.html',
 })
 export class App {
