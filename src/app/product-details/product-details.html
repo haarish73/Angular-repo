@@ -2,14 +2,16 @@
 
   <img [src]="product.ProductUrl" width="200" />
 
-  <h2>{{ product.ProductName }}</h2>
+  <div class="product-info">
+    <h2>{{ product.ProductName }}</h2>
 
-  <p>{{ product.ProductDescriptions }}</p>
+    <p>{{ product.ProductDescriptions }}</p>
 
-  <h3>₹{{ product.ProductPrice }}</h3>
+    <h3>₹{{ product.ProductPrice }}</h3>
 
-  <p>Color: {{ product.ProductColor }}</p>
+    <p><strong>Color:</strong> {{ product.ProductColor }}</p>
 
-  <p>Category: {{ product.ProductCategory }}</p>
+    <p><strong>Category:</strong> {{ product.ProductCategory }}</p>
+  </div>
 
 </div>

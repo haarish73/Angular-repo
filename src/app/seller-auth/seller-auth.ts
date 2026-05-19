@@ -15,13 +15,14 @@ import { CommonModule } from '@angular/common';
 export class SellerAuth {
 
   constructor(private seller: Seller, private Router:Router) {}
-  showLogin=false;
+  showLogin=true;
 
   sellerForm = new FormGroup({
     name: new FormControl(''),
     password: new FormControl(''),
     email: new FormControl('')
   });
+
 login() {
   const loginData = {
     email: this.sellerForm.value.email,

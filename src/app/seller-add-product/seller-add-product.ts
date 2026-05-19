@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ProductService }  from '../services/product'
 import { Products } from  "../data-type"
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-seller-add-product',
@@ -13,7 +14,9 @@ import { Products } from  "../data-type"
 })
 export class SellerAddProduct {
   addProductmessage : string | undefined;
-  constructor(private product: ProductService){}
+  constructor(private product: ProductService,
+    private router : Router
+  ){}
 
   submit(data : Products){
     console.warn(data);
@@ -21,6 +24,7 @@ export class SellerAddProduct {
       console.warn(result);
       if(result){
         this.addProductmessage = "product created successfully";
+        this.router.navigate(['/seller-home']);
 
       }
       setTimeout(() => {

@@ -109,6 +109,21 @@
       "ProductDescriptions": "Gaming laptop with RTX graphics card and high refresh rate display",
       "ProductUrl": "https://tse3.mm.bing.net/th/id/OIP.JiP83YtNTCYVxGqPkJS39QHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       "id": 10
+    },
+    {
+      "name": "Nothing Phone 2",
+      "price": "44999",
+      "color": "White",
+      "category": "Mobile",
+      "description": "Stylish Android smartphone with Glyph interface and smooth performance",
+      "image": "https://tse3.mm.bing.net/th/id/OIP.Ycq2i5xEHxVGy4EJ4jxHtAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "id": 12,
+      "ProductName": "Nothing Phone 2",
+      "ProductPrice": 44999,
+      "ProductColor": "White",
+      "ProductCategory": "Mobile",
+      "ProductDescriptions": "Stylish Android smartphone with Glyph interface and smooth performance",
+      "ProductUrl": "https://www.bing.com/images/search?view=detailV2&ccid=Ycq2i5xE&id=5256B1A00C89B7E22DFB0828DB7DC3A8FE7DDDA7&thid=OIP.Ycq2i5xEHxVGy4EJ4jxHtAHaHa&mediaurl=https%3a%2f%2fwww.red-dot.org%2ffileadmin%2f_processed_%2f8%2f3%2fcsm_48-07706-2024PD.1086616_CO_9c48e0c1d4.jpg&exph=1001&expw=1000&q=Nothing+Phone+2&FORM=IRPRST&ck=324DC8B03EA4F182B0EE91A34E222565&selectedIndex=0&itb=0"
     }
   ]
 }

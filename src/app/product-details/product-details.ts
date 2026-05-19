@@ -11,6 +11,7 @@ import { Products } from '../data-type';
   templateUrl: './product-details.html',
   styleUrls: ['./product-details.css']
 })
+
 export class ProductDetails {
 
   product: Products | undefined;
