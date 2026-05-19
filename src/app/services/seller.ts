@@ -8,7 +8,7 @@ import { Router } from '@angular/router'
   providedIn: 'root',
 })
 export class Seller {
-  isSelllerLoggedIn = new BehaviorSubject<boolean>(false);
+  isSellerLoggedIn = new BehaviorSubject<boolean>(false);
   constructor(private http: HttpClient, private router: Router) { }
 
   
@@ -23,7 +23,7 @@ export class Seller {
           role: 'seller'
         }));
 
-        this.isSelllerLoggedIn.next(true);
+        this.isSellerLoggedIn.next(true);
 
         this.router.navigate(['seller-home']);
 
@@ -32,9 +32,9 @@ export class Seller {
 
   reloadSeller() {
     if (localStorage.getItem('seller')) {
-      this.isSelllerLoggedIn.next(true);
+      this.isSellerLoggedIn.next(true);
     } else {
-      this.isSelllerLoggedIn.next(false);
+      this.isSellerLoggedIn.next(false);
     }
   }
 
@@ -66,13 +66,13 @@ export class Seller {
             role: 'seller'
           }));
 
-          this.isSelllerLoggedIn.next(true);
+          this.isSellerLoggedIn.next(true);
           this.router.navigate(['seller-home']);
 
         } else {
 
           console.warn("INVALID USER");
-          this.isSelllerLoggedIn.next(false);
+          this.isSellerLoggedIn.next(false);
 
         }
 
@@ -81,7 +81,7 @@ export class Seller {
       error: (err) => {
 
         console.error("API ERROR:", err);
-        this.isSelllerLoggedIn.next(false);
+        this.isSellerLoggedIn.next(false);
 
       }
 
