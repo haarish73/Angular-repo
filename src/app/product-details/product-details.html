@@ -1,0 +1,15 @@
+<div class="prod-dtls" *ngIf="product">
+
+  <img [src]="product.ProductUrl" width="200" />
+
+  <h2>{{ product.ProductName }}</h2>
+
+  <p>{{ product.ProductDescriptions }}</p>
+
+  <h3>₹{{ product.ProductPrice }}</h3>
+
+  <p>Color: {{ product.ProductColor }}</p>
+
+  <p>Category: {{ product.ProductCategory }}</p>
+
+</div>

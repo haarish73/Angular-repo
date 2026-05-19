@@ -2,11 +2,17 @@
   <h1>E-Com</h1>
 
   <div [ngSwitch]="menuType">
+<div *ngSwitchCase="'default'" class="nav-search">
 
-    <div *ngSwitchCase="'default'" class="nav-search">
-      <input type="text" placeholder="Search Products" />
-      <button>Search</button>
-    </div>
+  <input
+    type="text"
+    placeholder="Search Products"
+    [(ngModel)]="searchText"
+  />
+
+  <button (click)="submitSearch()">Search</button>
+
+</div>
 
     <ul *ngSwitchCase="'default'">
       <li><a routerLink="/seller-auth">Seller</a></li>

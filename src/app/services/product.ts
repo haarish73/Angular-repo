@@ -34,4 +34,15 @@ getProducts(limit: number){
   );
 }
 
+searchProducts(query: string) {
+  return this.http.get<Products[]>(
+    `http://localhost:3000/products?q=${query}`
+  );
+}
+
+getProductById(id : number){
+  return this.http.get<Products>(
+    `http://localhost:3000/products/${id}`
+  )
+}
 }

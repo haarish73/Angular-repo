@@ -5,6 +5,9 @@ import { SellerAuth } from './seller-auth/seller-auth';
 import { SellerHome } from './seller-home/seller-home';
 import { authGuard } from './auth-guard';
 import { SellerAddProduct } from './seller-add-product/seller-add-product';
+import { SearchPage } from './search-page/search-page';
+import { Component } from '@angular/core';
+import { ProductDetails } from './product-details/product-details';
 export const routes: Routes = [
   {
     path: '',
@@ -23,7 +26,17 @@ export const routes: Routes = [
     path:'seller-add-product',
     component:SellerAddProduct,
     
-    canActivate : [authGuard]
-  }
+    // canActivate : [authGuard]
+  },
+  {
+    component:SearchPage,
+    path:'search/:query'
+  },
+
+{
+  path: 'product/:id',
+  component: ProductDetails
+}
+
 
 ];
