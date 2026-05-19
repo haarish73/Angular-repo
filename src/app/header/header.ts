@@ -38,19 +38,21 @@ searchText: string = '';
 
     const seller = localStorage.getItem('seller');
 
-    if (seller && url.includes('seller')) {
-      this.menuType = 'seller';
-
-      const sellerStore = localStorage.getItem('seller');
-
-      if (sellerStore) {
-        const sellerData = JSON.parse(sellerStore);
-        this.sellerName = sellerData?.name || sellerData?.email;
+    if (seller) {
+      try {
+        const sellerData = JSON.parse(seller);
+        if (sellerData?.role === 'seller') {
+          this.menuType = 'seller';
+          this.sellerName = sellerData?.name || sellerData?.email || '';
+          return;
+        }
+      } catch {
+        localStorage.removeItem('seller');
       }
-
-    } else {
-      this.menuType = 'default';
     }
+
+    this.menuType = 'default';
+    this.sellerName = '';
 
   }
 

@@ -12,3 +12,12 @@
   </ng-template>
 
 </ngb-carousel>
+
+<div class="product-list" *ngIf="getProducts.length">
+  <div class="product-item" *ngFor="let item of getProducts">
+    <img [src]="item.ProductUrl" [alt]="item.ProductName" style="width:100%; max-width:250px; height:250px; object-fit:cover;" />
+    <h3>{{ item.ProductName }}</h3>
+    <p>{{ item.ProductDescriptions }}</p>
+    <strong>₹{{ item.ProductPrice }}</strong>
+  </div>
+</div>

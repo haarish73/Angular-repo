@@ -18,16 +18,15 @@ export const routes: Routes = [
     component: SellerAuth
   },
   {
-    path:'seller-home',
-    component:SellerHome,
-    // canActivate : [authGuard]
-  },
-  {
-    path:'seller-add-product',
-    component:SellerAddProduct,
-    
-    // canActivate : [authGuard]
-  },
+     path:'seller-home',
+     component:SellerHome,
+     canActivate : [authGuard]
+   },
+   {
+     path:'seller-add-product',
+     component:SellerAddProduct,
+     canActivate : [authGuard]
+   },
   {
     component:SearchPage,
     path:'search/:query'

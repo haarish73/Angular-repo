@@ -15,8 +15,13 @@ export class Seller {
   userSignUp(data: signUp) {
     this.http.post('http://localhost:3000/seller', data, { observe: 'response' })
       .subscribe((result) => {
-
-        localStorage.setItem('user', JSON.stringify(result.body));
+        const sellerData = result.body as signUp & { id?: number };
+        localStorage.setItem('seller', JSON.stringify({
+          name: sellerData.name,
+          email: sellerData.email,
+          id: sellerData.id,
+          role: 'seller'
+        }));
 
         this.isSelllerLoggedIn.next(true);
 
@@ -26,8 +31,10 @@ export class Seller {
   }
 
   reloadSeller() {
-    if (localStorage.getItem('user')) {
+    if (localStorage.getItem('seller')) {
       this.isSelllerLoggedIn.next(true);
+    } else {
+      this.isSelllerLoggedIn.next(false);
     }
   }
 
@@ -56,14 +63,16 @@ export class Seller {
             name: sellerData.name,
             email: sellerData.email,
             id: sellerData.id,
-            isSeller: true
+            role: 'seller'
           }));
 
+          this.isSelllerLoggedIn.next(true);
           this.router.navigate(['seller-home']);
 
         } else {
 
           console.warn("INVALID USER");
+          this.isSelllerLoggedIn.next(false);
 
         }
 
@@ -72,6 +81,7 @@ export class Seller {
       error: (err) => {
 
         console.error("API ERROR:", err);
+        this.isSelllerLoggedIn.next(false);
 
       }
 
