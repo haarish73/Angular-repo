@@ -8,8 +8,9 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-seller-auth',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule],
-  templateUrl: './seller-auth.html'
+  imports: [CommonModule, ReactiveFormsModule],
+  templateUrl: './seller-auth.html',
+  styleUrls: ['./seller-auth.css']
 })
 
 export class SellerAuth {
