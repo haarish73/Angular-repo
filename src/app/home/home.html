@@ -1,23 +1,37 @@
-<ngb-carousel *ngIf="getProducts.length">
+<!-- Custom Carousel -->
+<div class="custom-carousel" *ngIf="getProducts.length">
 
-  <ng-template ngbSlide *ngFor="let item of getProducts">
+  <div class="carousel-container">
+    <div class="carousel-slide" *ngFor="let item of getProducts">
 
-    <img [src]="item.ProductUrl" style="width:100%; height:300px; object-fit:cover;" />
+      <img [src]="item.ProductUrl" [alt]="item.ProductName" />
 
-    <div class="carousel-caption">
-      <h3>{{ item.ProductName }}</h3>
-      <p>{{ item.ProductDescriptions }}</p>
+      <div class="carousel-caption">
+        <h3>{{ item.ProductName }}</h3>
+        <p>{{ item.ProductDescriptions }}</p>
+      </div>
+
     </div>
-
-  </ng-template>
-
-</ngb-carousel>
-
-<div class="product-list" *ngIf="getProducts.length">
-  <div class="product-item" *ngFor="let item of getProducts">
-    <img [src]="item.ProductUrl" [alt]="item.ProductName" style="width:100%; max-width:250px; height:250px; object-fit:cover;" />
-    <h3>{{ item.ProductName }}</h3>
-    <p>{{ item.ProductDescriptions }}</p>
-    <strong>₹{{ item.ProductPrice }}</strong>
   </div>
+
+</div>
+
+<!-- Product List -->
+<div class="product-list" *ngIf="getProducts.length">
+
+  <div class="product-item" *ngFor="let item of getProducts">
+
+    <img
+      [src]="item.ProductUrl"
+      [alt]="item.ProductName"
+    />
+
+    <h3>{{ item.ProductName }}</h3>
+
+    <p>{{ item.ProductDescriptions }}</p>
+
+    <strong>₹{{ item.ProductPrice }}</strong>
+
+  </div>
+
 </div>

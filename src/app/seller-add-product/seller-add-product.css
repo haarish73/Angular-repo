@@ -1,0 +1,77 @@
+/* Page Heading */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+/* Form Container */
+.form-control {
+  width: 400px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Success/Error Message */
+.form-control p {
+  text-align: center;
+  color: green;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* Form Layout */
+.form-control form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input Fields */
+.form-control input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* Input Focus Effect */
+.form-control input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+/* Submit Button */
+.form-control button {
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Button Hover */
+.form-control button:hover {
+  background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .form-control {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
