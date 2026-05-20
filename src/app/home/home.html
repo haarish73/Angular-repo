@@ -35,3 +35,23 @@
   </div>
 
 </div>
+
+<div class="trending-section" *ngIf="trendingProducts.length">
+
+  <h2> Trending Products</h2>
+
+  <div class="trending-list">
+
+    <div class="trending-item" *ngFor="let item of trendingProducts">
+
+      <img [src]="item.ProductUrl" />
+
+      <h4>{{ item.ProductName }}</h4>
+
+      <p>₹{{ item.ProductPrice }}</p>
+
+    </div>
+
+  </div>
+
+</div>

@@ -91,6 +91,51 @@
       "ProductDescriptions": "Gaming laptop with RTX graphics card and high refresh rate display",
       "ProductUrl": "https://tse3.mm.bing.net/th/id/OIP.JiP83YtNTCYVxGqPkJS39QHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       "id": 10
+    },
+    {
+      "ProductName": "Men Slim Fit Casual Shirt",
+      "ProductPrice": 799,
+      "ProductColor": "White",
+      "ProductCategory": "Men Clothing",
+      "ProductDescriptions": "Comfortable slim fit casual shirt perfect for office and outings",
+      "ProductUrl": "https://assets.myntassets.com/h_200,w_200,c_fill,g_auto/h_1440,q_100,w_1080/v1/assets/images/20205568/2022/9/28/bb6b3264-d017-4f9e-8dc1-c2ffa5fb71a31664383892097KHAKIDOBBYSLIMFITCASUALSHIRT1.jpg",
+      "id": 17
+    },
+    {
+      "ProductName": "Men Regular Fit Jeans",
+      "ProductPrice": 1299,
+      "ProductColor": "Blue",
+      "ProductCategory": "Men Clothing",
+      "ProductDescriptions": "Classic blue denim jeans with durable fabric and perfect fit",
+      "ProductUrl": "https://i5.walmartimages.com/seo/George-Men-s-and-Big-Men-s-100-Cotton-Regular-Fit-Jeans_4948da01-887f-487b-8972-e791261fd13a_1.629b7e54ca0a126034af0980ea18f182.jpeg",
+      "id": 18
+    },
+    {
+      "ProductName": "Men Printed T-Shirt",
+      "ProductPrice": 499,
+      "ProductColor": "Black",
+      "ProductCategory": "Men Clothing",
+      "ProductDescriptions": "Stylish printed cotton t-shirt for daily wear comfort",
+      "ProductUrl": "https://images.bewakoof.com/original/men-s-red-moon-rider-graphic-printed-oversized-t-shirt-502017-1737092523-1.jpg",
+      "id": 19
+    },
+    {
+      "ProductName": "Men Hoodie Sweatshirt",
+      "ProductPrice": 1499,
+      "ProductColor": "Grey",
+      "ProductCategory": "Men Clothing",
+      "ProductDescriptions": "Warm and stylish hoodie perfect for winter season",
+      "ProductUrl": "https://i5.walmartimages.com/seo/Mens-Fleece-Lined-Hoodies-Sweatshirts-Big-Tall-Front-Pocket-Basic-Pullover-Sweatshirt-Casual-Plus-Size-Long-Sleeve-Solid-Comfort-Hooded-Savings_4610b52e-6e16-45c4-9380-467f21fa0d95.f2d165170b9ba411ecf3ed71920c01a6.jpeg",
+      "id": 20
+    },
+    {
+      "ProductName": "Men Formal Blazer",
+      "ProductPrice": 2999,
+      "ProductColor": "Black",
+      "ProductCategory": "Men Clothing",
+      "ProductDescriptions": "Elegant formal blazer suitable for parties and business meetings",
+      "ProductUrl": "https://th.bing.com/th/id/OIP.DHlDa5CI-vg71SG2j6evBwHaId?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "id": 21
     }
   ]
 }

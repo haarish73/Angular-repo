@@ -15,8 +15,9 @@ import { of } from 'rxjs';
 })
 export class HomeComponent {
   getProducts: Products[] = [];
+  trendingProducts: Products[] = [];
 
-  constructor(private product: ProductService) {}
+  constructor(private product: ProductService, private trendingprd : ProductService) {}
 
   ngOnInit(): void {
     this.product.productList()
@@ -26,5 +27,10 @@ export class HomeComponent {
       .subscribe((data) => {
         this.getProducts = data.slice(0, 3);
       });
+
+      this.trendingprd.getProducts(4)
+    .subscribe((data) => {
+      this.trendingProducts = data;
+    });
   }
 }

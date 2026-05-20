@@ -45,4 +45,10 @@ getProductById(id : number){
     `http://localhost:3000/products/${id}`
   )
 }
+
+trendingproduct(limit: number) {
+  return this.http.get<Products[]>(
+    `http://localhost:3000/products?_limit=${limit}`
+  );
+}
 }
