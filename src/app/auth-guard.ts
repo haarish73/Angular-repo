@@ -6,12 +6,18 @@ export const authGuard: CanActivateFn = () => {
 
   const router = inject(Router);
 
-  const user = localStorage.getItem('user');
+  const seller = localStorage.getItem('seller');
 
-  if (user) {
-    return true; // allow seller-home
+  if (seller) {
+    try {
+      const sellerData = JSON.parse(seller);
+      if (sellerData?.role === 'seller') {
+        return true;
+      }
+    } catch {
+      localStorage.removeItem('seller');
+    }
   }
 
-  // block access if not logged in
   return router.createUrlTree(['/seller-auth']);
 };

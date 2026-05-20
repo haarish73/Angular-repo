@@ -8,17 +8,22 @@ import { Router } from '@angular/router'
   providedIn: 'root',
 })
 export class Seller {
-  isSelllerLoggedIn = new BehaviorSubject<boolean>(false);
+  isSellerLoggedIn = new BehaviorSubject<boolean>(false);
   constructor(private http: HttpClient, private router: Router) { }
 
   
   userSignUp(data: signUp) {
     this.http.post('http://localhost:3000/seller', data, { observe: 'response' })
       .subscribe((result) => {
+        const sellerData = result.body as signUp & { id?: number };
+        localStorage.setItem('seller', JSON.stringify({
+          name: sellerData.name,
+          email: sellerData.email,
+          id: sellerData.id,
+          role: 'seller'
+        }));
 
-        localStorage.setItem('user', JSON.stringify(result.body));
-
-        this.isSelllerLoggedIn.next(true);
+        this.isSellerLoggedIn.next(true);
 
         this.router.navigate(['seller-home']);
 
@@ -26,8 +31,10 @@ export class Seller {
   }
 
   reloadSeller() {
-    if (localStorage.getItem('user')) {
-      this.isSelllerLoggedIn.next(true);
+    if (localStorage.getItem('seller')) {
+      this.isSellerLoggedIn.next(true);
+    } else {
+      this.isSellerLoggedIn.next(false);
     }
   }
 
@@ -56,14 +63,16 @@ export class Seller {
             name: sellerData.name,
             email: sellerData.email,
             id: sellerData.id,
-            isSeller: true
+            role: 'seller'
           }));
 
+          this.isSellerLoggedIn.next(true);
           this.router.navigate(['seller-home']);
 
         } else {
 
           console.warn("INVALID USER");
+          this.isSellerLoggedIn.next(false);
 
         }
 
@@ -72,6 +81,7 @@ export class Seller {
       error: (err) => {
 
         console.error("API ERROR:", err);
+        this.isSellerLoggedIn.next(false);
 
       }
 

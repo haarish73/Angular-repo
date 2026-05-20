@@ -3,6 +3,8 @@ import { ProductService } from '../services/product';
 import { Products } from '../data-type';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -12,18 +14,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.css'
 })
 export class HomeComponent {
-  getProducts: undefined | Products[];
+  getProducts: Products[] = [];
 
   constructor(private product: ProductService) {}
 
   ngOnInit(): void {
-    console.log('HomeComponent initialized');
-
-  this.product.getProducts(3).subscribe((data) => {
-  this.getProducts = data;
-
-
-      console.log('Assigned populateProduct:', this.getProducts);
-    });
+    this.product.productList()
+      .pipe(
+        catchError(() => of([]))
+      )
+      .subscribe((data) => {
+        this.getProducts = data.slice(0, 3);
+      });
   }
 }
